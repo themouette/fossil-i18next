@@ -1,6 +1,6 @@
 {
   "name": "fossil-i18next",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "fossil-i18next.js",
   "ignore": [
     "**/.*",
