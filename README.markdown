@@ -5,6 +5,9 @@ Fossil-i18next is a [Fossil](https://github.com/themouette/fossil-core) +
 [Handlebars](http://handlebarsjs.com/) [i18next](http://i18next.com)
 integration.
 
+[![Build
+Status](https://travis-ci.org/themouette/fossil-i18next.png?branch=master)](https://travis-ci.org/themouette/fossil-i18next)
+
 Install
 -------
 
