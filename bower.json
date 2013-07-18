@@ -1,0 +1,15 @@
+{
+  "name": "fossil-i18next",
+  "version": "0.0.0",
+  "main": "fossil-i18next.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "fossil-core": "~0.0.2",
+    "i18next": "~1.6.3",
+    "handlebars": "~1.0.0"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "fossil-i18next",
+  "version": "0.0.0",
+  "description": "i18next intgration for Fossil and Handlebars.",
+  "main": "fossil-i18next.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/themouette/fossil-i18next.git"
+  },
+  "keywords": [
+    "fossil",
+    "backbone",
+    "i18next",
+    "i18n"
+  ],
+  "author": "themouette",
+  "license": "MIT",
+  "readmeFilename": "README.markdown",
+  "gitHead": "e0b613e17807fdbbd60703419d7a33a533fb304b",
+  "bugs": {
+    "url": "https://github.com/themouette/fossil-i18next/issues"
+  },
+  "devDependencies": {
+    "grunt-cli": "~0.1.9",
+    "mocha": "~1.12.0",
+    "grunt": "~0.4.1",
+    "grunt-mocha": "~0.3.4",
+    "bower": "~0.10.0",
+    "chai": "~1.7.2",
+    "grunt-concurrent": "~0.3.0",
+    "grunt-contrib-connect": "~0.3.0",
+    "grunt-contrib-watch": "~0.4.4"
+  }
+}
