@@ -36,7 +36,7 @@ module.exports = function(grunt) {
             reporter: 'Spec',
             run: true
         },
-        all: ['tests/test.html']
+        service: ['tests/test.html', 'tests/handlebars.html']
     },
     concat: {
         library:{
