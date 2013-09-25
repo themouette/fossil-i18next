@@ -18,13 +18,14 @@ describe('handlebars helper', function () {
                     init: {
                         resStore: resStore,
                         lng: 'en-US'
-                    }
+                    },
+                engine: 'handlebars'
                 })
             }
         });
     });
 
-    it('should declare Handlebars template', function() {
+    it('should declare Handlebars template helper', function() {
         var tmpl = Handlebars.compile('{{t "simple"}}');
         assert.equal(tmpl(), 'ok_from_en-US');
     });
@@ -52,5 +53,48 @@ describe('handlebars helper', function () {
         assert.equal(tmpl({
             "qualify": "cool"
         }), "Bow ties are cool and will ever be.");
+    });
+});
+
+describe('Component helper', function () {
+    var assert = chai.assert;
+    var resStore = {
+        dev: { app: { 'simple': 'ok_from_dev' } },
+        en: { app: { 'simple': 'ok_from_en' } },
+        'en-US': { app: {
+            'simple': 'ok_from_en-US',
+            'context': 'I am a cool __type__ and my name is __name__.',
+            'sprintf': 'Hey %s, welcome %s',
+            'mix': '%s are __qualify__ and will __temporality__ be.'
+        } }
+    };
+
+    it('should use component namespace', function(done) {
+        var $el = $('<div />');
+        var tmpl = new Fossil.Services.Handlebars({
+            expose: true,
+            router: true
+        });
+        var app = new (Fossil.Application.extend({
+            services: {
+                i18n: new Fossil.Services.I18next({
+                    init: {
+                        resStore: resStore,
+                        lng: 'en-US'
+                    },
+                    engine: 'handlebars'
+                    }),
+                template: tmpl
+            },
+            template: '{{t "simple"}}',
+            selector: $el,
+            i18nextNs: 'app'
+        }))();
+
+        app.start();
+        app.then(function () {
+            assert.equal($el.html(), 'ok_from_en-US');
+            done();
+        }, done);
     });
 });
