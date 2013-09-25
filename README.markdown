@@ -21,16 +21,28 @@ Git install:
 $ git clone https://github.com/themouette/fossil-i18next.git && npm install
 ```
 
+[Require]() dependancies:
+
+``` !javascript
+requirejs.config({
+    paths: {
+        'fossil-i18next': 'components/fossil-i18next/fossil-i18next.amd',
+        'i18next': 'components/i18next/release/i18next.amd-1.6.3'
+    }
+});
+```
+
 Usage
 -----
 
-In your application, just declare the `I18next` service, and the i18next context
-for application template.
+In your application, just declare the `I18next` service provided with template
+engine name.
 
 ``` javascript
 var MyApp = Fossil.Application.extend({
     services: {
         i18n: new Fossil.Services.I18next({
+            engine: 'handlebars', // for now, only handlebars is supported
             init: {} // the i18next init options
         })
     },
