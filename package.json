@@ -1,6 +1,6 @@
 {
   "name": "fossil-i18next",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "i18next intgration for Fossil and Handlebars.",
   "main": "fossil-i18next.js",
   "directories": {
